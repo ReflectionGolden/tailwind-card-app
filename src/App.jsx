@@ -17,7 +17,8 @@ function App() {
         <h2>Tailwind-based Responsive Card</h2>
           <Card 
             title="Responsive Tailwind Card"
-            description="This project demonstrates the use of TailwindCSS within a React + Vite project to create a card component which is reusable and responsive, therefore being able to be used for a veriety of uses such as employee cards (as seen below) or explanation cards (such as the one this description is in)."
+            description="This project demonstrates the use of TailwindCSS within a React + Vite project to create a card component which is reusable and responsive, therefore being able to be used for a veriety of uses such as employee cards (as seen below) or explanation cards (such as the one this description is in).
+I have also implemented a small animation so that hovering over a card causes it to move up slightly and cast a shadow as if you are picking it up."
             img={Tailwind}
           />
         <span className='flex'>
@@ -52,10 +53,10 @@ function Container(props) {
 
 function Card(props) {
   return (
-    <div className='xl:max-w-sm xl:min-w-sm lg:max-w-xs lg:min-w-xs rounded-lg bg-no-repeat mx-auto my-3 bg-slate-900 border border-solid border-orange-100'>
+    <div className='xl:max-w-sm xl:min-w-sm lg:max-w-xs lg:min-w-xs rounded-lg bg-no-repeat mx-auto my-3 bg-slate-900 border border-solid border-orange-100 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black'>
       <h3 className='text-2xl mb-2 font-bold text-shadow-md text-shadow-black underline underline-offset-5 decoration-3 w-fit ml-3'>{props.title}</h3>
       <img src={props.img} alt={props.title} className='rounded-full aspect-square size-25 ml-3 my-2'/>
-      <p className='bg-neutral-600/50 xl:max-w-xs xl:min-w-xs lg:max-w-2xs lg:min-w-2xs mx-auto rounded p-2 mb-2'>{props.description}</p>
+      <p className='bg-neutral-600/50 xl:max-w-xs xl:min-w-xs lg:max-w-2xs lg:min-w-2xs mx-auto rounded p-2 mb-2 whitespace-pre-wrap'>{props.description}</p>
     </div>
   );
 }
